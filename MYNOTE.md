@@ -104,7 +104,11 @@ history.push -> store.dispatch -> enhancedHistory.listen -> router
 store.dispath完成之后呢，会触发store.subscribe回调函数handleStoreChange，另外enhancedHistory.listen中还有一个回调函数A。  
 A中判断location是否改变了，如果改变了，触发listener。这里listener，由router注册，控制逻辑交给了router。 
 
-这样的数据流的好处就是store.dispath(action)时，路由也能正确的更新。   
+这样的数据流的好处就是store.dispath(action)时，路由也能正确的更新。
+** middleware.js actions.js
+这两个文件时什么的呢？
+引用actions.js  我们可以dispath(push(args))更改loaction信息   
+middleware中间件的作用就是捕获上面的action，调用history相应的方法。并且防止该action向下面的中间件传播，防止此action被传入的reducer。
 
 
 

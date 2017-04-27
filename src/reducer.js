@@ -13,6 +13,8 @@ const initialState = {
  * has transitioned to. This may not be in sync with the router, particularly
  * if you have asynchronously-loaded routes, so reading from and relying on
  * this state is discouraged.
+ * payload 其实就是location对象
+ * state.routing.locationBeforeTransitions 保存的其实就是location对象
  */
 export function routerReducer(state = initialState, { type, payload } = {}) {
   if (type === LOCATION_CHANGE) {

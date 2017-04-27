@@ -1,10 +1,10 @@
 react-router-redux 解析
 =================
 react-router 为 react 提供路由功能，但是和redux没有任何关系。
-react-router-redux 的作用有3个方面:   
+react-router-redux 中的syncHistoryWithStore作用有3个方面:   
 1、就是把location信息,保存到store中。    
 2、当store中的location信息改变时，更新浏览器url   
-3、重写了history.listen方法。history.listen用来注册监听函数，当location改变时触发回调。        
+3、重写了history.listen方法。enhanceHistory.listen用来注册监听函数，当store中的location改变时触发回调。        
 被重写了的listen函数，通过判断store中的location信息是否改变来触发监听函数的。      
 
 ```
